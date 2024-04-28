@@ -10,5 +10,6 @@ import (
 func Handler(r *gin.Engine) {
 	// Routes
 	r.GET("/ping", pingTest)
+	r.GET("/testFunc", testFunc)
 
 }
