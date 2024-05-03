@@ -6,9 +6,9 @@ import (
 )
 
 func testFunc(c *gin.Context) {
-	scrapers.Scrape()
+	resp := scrapers.Scrape()
 
 	c.JSON(200, gin.H{
-		"message": "test",
+		"message": resp,
 	})
 }
