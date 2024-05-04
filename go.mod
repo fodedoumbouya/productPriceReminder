@@ -3,7 +3,7 @@ module github.com/fodedoumbouya/productPriceReminder
 go 1.22.0
 
 require (
-	github.com/PuerkitoBio/goquery v1.9.1 // indirect
+	github.com/PuerkitoBio/goquery v1.9.2 // indirect
 	github.com/andybalholm/cascadia v1.3.2 // indirect
 	github.com/antchfx/htmlquery v1.3.1 // indirect
 	github.com/antchfx/xmlquery v1.4.0 // indirect
