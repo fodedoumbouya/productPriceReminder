@@ -2,7 +2,6 @@ package scrapers
 
 import (
 	"bytes"
-	"encoding/json"
 	"fmt"
 	"log"
 	"regexp"
@@ -18,19 +17,8 @@ func Scrape() string {
 	return visitWeb(c)
 }
 
-type RunParams struct {
-	Data Data `json:"data"`
-}
-type PageSizeComponent struct {
-	HasSizeInfo bool `json:"hasSizeInfo"`
-}
-
-type Data struct {
-	PageSizeComponent PageSizeComponent `json:"pageSizeComponent"`
-}
-
 func visitWeb(c *colly.Collector) string {
-	fmt.Println("Visiting: https://en.wikipedia.org/wiki/Main_Page", *c)
+	// fmt.Println("Visiting: https://en.wikipedia.org/wiki/Main_Page", *c)
 	// make a channel
 	channel := make(chan string)
 	var mapping = []string{}
@@ -59,13 +47,6 @@ func visitWeb(c *colly.Collector) string {
 			start := strings.Index(string(data), "window.runParams = ") + len("window.runParams = ")
 			end := strings.LastIndex(string(data), "}")
 			jsonStr := string(data[start : end+1])
-			// fmt.Println(jsonStr, "jsonStr")
-			var runParams RunParams
-			err = json.Unmarshal([]byte(jsonStr), &runParams)
-			if err != nil {
-				fmt.Println(err)
-
-			}
 
 			// discount skuActivityAmount
 			// no discount skuAmount
