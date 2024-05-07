@@ -55,13 +55,6 @@ func visitWeb(c *colly.Collector) string {
 			if err != nil {
 				log.Fatal(err)
 			}
-
-			// Find the review items
-			// doc.Find(".left-content article .post-title").Each(func(i int, s *goquery.Selection) {
-			// 	// For each item found, get the title
-			// 	title := s.Find("a").Text()
-			// 	fmt.Printf("Review %d: %s\n", i, title)
-			// })
 			data := doc.Find("script").Text()
 			start := strings.Index(string(data), "window.runParams = ") + len("window.runParams = ")
 			end := strings.LastIndex(string(data), "}")
