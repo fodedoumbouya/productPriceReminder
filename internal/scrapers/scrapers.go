@@ -67,14 +67,12 @@ func visitWeb(c *colly.Collector) string {
 				fmt.Println("No match found")
 			}
 
-			// fmt.Println(runParams.Data.PageSizeComponent.HasSizeInfo)
-
 			channel <- jsonStr
 
 		})
 
 		c.OnHTML("div", func(e *colly.HTMLElement) {
-			// printing all URLs associated with the a links in the page
+
 			// fmt.Println(e.Attr("href"))
 			// fmt.Println(e.DOM)
 
