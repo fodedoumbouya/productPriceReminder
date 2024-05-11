@@ -132,7 +132,6 @@ func visitWeb(c *colly.Collector) string {
 		// ("https://www.amazon.com/dp/B0BNK5F2GN")
 		// time.Sleep(5 * time.Second)
 
-		// "https://en.wikipedia.org/wiki/Main_Page")
 	}()
 
 	return <-channel
