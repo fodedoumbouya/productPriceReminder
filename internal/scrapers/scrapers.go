@@ -73,9 +73,6 @@ func visitWeb(c *colly.Collector) string {
 
 		c.OnHTML("div", func(e *colly.HTMLElement) {
 
-			// fmt.Println(e.Attr("href"))
-			// fmt.Println(e.DOM)
-
 			// mapping = append(mapping, e.Attr("href"))
 
 			// body := bytes.NewReader(e.Response.Body)
