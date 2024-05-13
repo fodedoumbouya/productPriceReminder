@@ -116,7 +116,7 @@ func visitWeb(c *colly.Collector) string {
 
 			// // Find the review items
 			// doc.Find(".left-content article .post-title").Each(func(i int, s *goquery.Selection) {
-			// 	// For each item found, get the title
+
 			// 	title := s.Find("a").Text()
 			// 	fmt.Printf("Review %d: %s\n", i, title)
 			// })
